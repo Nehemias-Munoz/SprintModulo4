@@ -18,6 +18,7 @@ public class Profesional {
 
     /**
      * Constructor de la clase con parametros
+     * 
      * @param titulo
      * @param fechaIngreso
      */
@@ -28,6 +29,7 @@ public class Profesional {
 
     /**
      * Metodo que retorna los parametros y valores de la clase
+     * 
      * @return String que contiene los parametros y valores de la clase
      */
     @Override
@@ -56,11 +58,11 @@ public class Profesional {
     }
 
     /**
-     * Metodo que complementado con la interfaz muestra por consola datos del usuario profesional
+     * Metodo que complementado con la interfaz muestra por consola datos del
+     * usuario profesional
      */
-    public void analizarUsuario(){
-        //Todo: Implementar interfaz (Asesoria)
-        System.out.println("Titulo: "+ titulo + "\nFecha Ingreso: "+getFechaIngreso());
+    public void analizarUsuario() {
+        // Todo: Implementar interfaz (Asesoria)
+        System.out.println("Titulo: " + titulo + "\nFecha Ingreso: " + getFechaIngreso());
     }
-}
 }
