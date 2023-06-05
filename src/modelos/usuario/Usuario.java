@@ -1,8 +1,10 @@
 package modelos.usuario;
+import interfaces.asesoria.Asesoria;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class Usuario {
+public class Usuario implements Asesoria {
     private String nombre;
     private LocalDate fechaNacimiento;
     private String run;
@@ -73,10 +75,12 @@ public class Usuario {
     }
 
     /**
-     *Metodo que muestra por consola el nombre y rut del usuario
+     *Metodo implementado de Asesoria que muestra por consola el nombre y rut del usuario
      */
-    public void analizarUsuario(){
+    @Override
+    public void analizarUsuario() {
         String mensaje = "Nombre: "+ this.nombre + "\n Run: "+ this.run;
         System.out.println(mensaje);
     }
+
 }
