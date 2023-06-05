@@ -31,7 +31,7 @@ public class Profesional  extends Usuario implements Asesoria {
     }
 
     /**
-     * Constructor de la clase con parametros
+     * Constructor de la clase con parametros y herencia
      * @param nombre
      * @param fechaNacimiento
      * @param run

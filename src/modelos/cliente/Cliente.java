@@ -1,8 +1,14 @@
 package modelos.cliente;
 
 import interfaces.asesoria.Asesoria;
+import modelos.usuario.Usuario;
 
-public class Cliente implements Asesoria {
+import java.time.LocalDate;
+
+/**
+ * @author nehemiasmunoz
+ */
+public class Cliente extends Usuario implements Asesoria {
     private String rut;
     private String nombres;
     private String apellidos;
@@ -32,6 +38,34 @@ public class Cliente implements Asesoria {
      * @param edad
      */
     public Cliente(String rut, String nombres, String apellidos, String telefono, String afp, String sistemaSalud, String direccion, String comuna, int edad) {
+        this.rut = rut;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.telefono = telefono;
+        this.afp = afp;
+        this.sistemaSalud = sistemaSalud;
+        this.direccion = direccion;
+        this.comuna = comuna;
+        this.edad = edad;
+    }
+
+    /**
+     * Constructor de la clase con parametros propio y herencia
+     * @param nombre
+     * @param fechaNacimiento
+     * @param run
+     * @param rut
+     * @param nombres
+     * @param apellidos
+     * @param telefono
+     * @param afp
+     * @param sistemaSalud
+     * @param direccion
+     * @param comuna
+     * @param edad
+     */
+    public Cliente(String nombre, LocalDate fechaNacimiento, String run, String rut, String nombres, String apellidos, String telefono, String afp, String sistemaSalud, String direccion, String comuna, int edad) {
+        super(nombre, fechaNacimiento, run);
         this.rut = rut;
         this.nombres = nombres;
         this.apellidos = apellidos;
