@@ -1,12 +1,14 @@
 package modelos.profesional;
 
+import interfaces.asesoria.Asesoria;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 /**
  * @author nehemiasmunoz
  */
-public class Profesional {
+public class Profesional  implements Asesoria {
     private String titulo;
     private LocalDate fechaIngreso;
 
@@ -61,6 +63,7 @@ public class Profesional {
      * Metodo que complementado con la interfaz muestra por consola datos del
      * usuario profesional
      */
+    @Override
     public void analizarUsuario() {
         // Todo: Implementar interfaz (Asesoria)
         System.out.println("Titulo: " + titulo + "\nFecha Ingreso: " + getFechaIngreso());
