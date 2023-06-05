@@ -1,7 +1,4 @@
 package modelos.usuario;
-
-import javax.swing.*;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -10,15 +7,28 @@ public class Usuario {
     private LocalDate fechaNacimiento;
     private String run;
 
+    /**
+     * Constructor vacio de la clase
+     */
     public Usuario() {
     }
 
+    /**
+     * Constructor de la clase
+     * @param nombre
+     * @param fechaNacimiento
+     * @param run
+     */
     public Usuario(String nombre, LocalDate fechaNacimiento, String run) {
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
         this.run = run;
     }
 
+    /**
+     * Metodo que retorna parametros y valores de la clase
+     * @return mensaje con valores y parametros
+     */
     @Override
     public String toString() {
         return "Usuario{" +
@@ -53,13 +63,20 @@ public class Usuario {
         this.run = run;
     }
 
+    /**
+     * Metodo que calcula la edad del usuario
+     * @return mensaje con la edad en años de usuarios
+     */
     public String mostrarEdad(){
         int anioActual = LocalDate.now().getYear();
         return "El usuario tiene " + (anioActual - this.fechaNacimiento.getYear())+"años.";
     }
 
+    /**
+     *Metodo que muestra por consola el nombre y rut del usuario
+     */
     public void analizarUsuario(){
         String mensaje = "Nombre: "+ this.nombre + "\n Run: "+ this.run;
-        JOptionPane.showMessageDialog(null, mensaje);
+        System.out.println(mensaje);
     }
 }
