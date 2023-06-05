@@ -1,6 +1,8 @@
 package modelos.cliente;
 
-public class Cliente {
+import interfaces.asesoria.Asesoria;
+
+public class Cliente implements Asesoria {
     private String rut;
     private String nombres;
     private String apellidos;
@@ -152,8 +154,8 @@ public class Cliente {
     /**
      * Metodo que complementado con la interfaz muestra por consola datos del usuario
      */
+    @Override
     public void analizarUsuario(){
-        //Todo: Implementar interfaz (Asesoria)
         System.out.println("Direccion"+ direccion + "\nComuna"+comuna);
     }
 }
