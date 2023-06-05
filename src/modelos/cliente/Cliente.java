@@ -132,4 +132,28 @@ public class Cliente {
     public void setEdad(int edad) {
         this.edad = edad;
     }
+
+    /**
+     * Metodo que retorna el nombre completo del cliente
+     * @return String que contiene los nombres y apellidos concatenados con un espacio
+     */
+    public String obtenerNombre(){
+        return nombres +" "+ apellidos;
+    }
+
+    /**
+     * Metodo que retorna el sistema de salud del cliente
+     * @return String que contiene (Fonasa o Isapre)
+     */
+    public String obtenerSistemaSalud(){
+        return sistemaSalud;
+    }
+
+    /**
+     * Metodo que complementado con la interfaz muestra por consola datos del usuario
+     */
+    public void analizarUsuario(){
+        //Todo: Implementar interfaz (Asesoria)
+        System.out.println("Direccion"+ direccion + "\nComuna"+comuna);
+    }
 }
