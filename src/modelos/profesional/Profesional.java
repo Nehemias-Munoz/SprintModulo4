@@ -1,6 +1,7 @@
 package modelos.profesional;
 
 import interfaces.asesoria.Asesoria;
+import modelos.usuario.Usuario;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -8,7 +9,7 @@ import java.time.format.DateTimeFormatter;
 /**
  * @author nehemiasmunoz
  */
-public class Profesional  implements Asesoria {
+public class Profesional  extends Usuario implements Asesoria {
     private String titulo;
     private LocalDate fechaIngreso;
 
@@ -25,6 +26,20 @@ public class Profesional  implements Asesoria {
      * @param fechaIngreso
      */
     public Profesional(String titulo, LocalDate fechaIngreso) {
+        this.titulo = titulo;
+        this.fechaIngreso = fechaIngreso;
+    }
+
+    /**
+     * Constructor de la clase con parametros
+     * @param nombre
+     * @param fechaNacimiento
+     * @param run
+     * @param titulo
+     * @param fechaIngreso
+     */
+    public Profesional(String nombre, LocalDate fechaNacimiento, String run, String titulo, LocalDate fechaIngreso) {
+        super(nombre, fechaNacimiento, run);
         this.titulo = titulo;
         this.fechaIngreso = fechaIngreso;
     }
@@ -65,7 +80,6 @@ public class Profesional  implements Asesoria {
      */
     @Override
     public void analizarUsuario() {
-        // Todo: Implementar interfaz (Asesoria)
         System.out.println("Titulo: " + titulo + "\nFecha Ingreso: " + getFechaIngreso());
     }
 }
