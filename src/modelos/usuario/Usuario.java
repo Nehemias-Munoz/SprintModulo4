@@ -1,7 +1,9 @@
 package modelos.usuario;
 
 import javax.swing.*;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Usuario {
     private String nombre;
@@ -34,8 +36,9 @@ public class Usuario {
         this.nombre = nombre;
     }
 
-    public LocalDate getFechaNacimiento() {
-        return fechaNacimiento;
+    public String getFechaNacimiento() {
+        DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+        return fechaNacimiento.format(dateFormat);
     }
 
     public void setFechaNacimiento(LocalDate fechaNacimiento) {
