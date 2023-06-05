@@ -1,10 +1,11 @@
 package modelos.administrativo;
 
+import interfaces.asesoria.Asesoria;
 import modelos.usuario.Usuario;
 
 import java.time.LocalDate;
 
-public class Administrativo extends Usuario {
+public class Administrativo extends Usuario implements Asesoria {
     private String area;
     private String experiencia;
 
@@ -52,8 +53,8 @@ public class Administrativo extends Usuario {
     /**
      * Metodo que complementado con la interfaz muestra por consola datos del usuario Administrativo
      */
+    @Override
     public void analizarUsuario(){
-        //Todo: Implementar interfaz (Asesoria)
         System.out.println("Area: "+ area + "\nExperiencia: "+experiencia);
     }
 }
