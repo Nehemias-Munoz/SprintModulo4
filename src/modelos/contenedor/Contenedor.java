@@ -38,21 +38,6 @@ public class Contenedor {
                 '}';
     }
 
-    public List<Asesoria> getTiposUsuarios() {
-        return tiposUsuarios;
-    }
-
-    public void setTiposUsuarios(List<Asesoria> tiposUsuarios) {
-        this.tiposUsuarios = tiposUsuarios;
-    }
-
-    public List<Capacitacion> getCapacitaciones() {
-        return capacitaciones;
-    }
-
-    public void setCapacitaciones(List<Capacitacion> capacitaciones) {
-        this.capacitaciones = capacitaciones;
-    }
 
     //Metodos solicitados
 
@@ -93,8 +78,9 @@ public class Contenedor {
     }
 
     public void eliminarUsuario(String rut){
-        for (Asesoria user: tiposUsuarios) {
 
+        for ( Asesoria user: tiposUsuarios) {
+            user.
         }
     }
 
