@@ -1,195 +1,136 @@
 package modelos.cliente;
 
+import java.time.LocalDate;
+
 import interfaces.asesoria.Asesoria;
 import modelos.usuario.Usuario;
-
-import java.time.LocalDate;
 
 /**
  * @author nehemiasmunoz
  */
 public class Cliente extends Usuario implements Asesoria {
-    private String rut;
-    private String nombres;
-    private String apellidos;
-    private String telefono;
-    private String afp;
-    private String sistemaSalud;
-    private String direccion;
-    private String comuna;
-    private int edad;
+	private String nombreEmpresa;
+	private String giroEmpresa;
+	private String telefonoRepresentante;
+	private String direccionEmpresa;
+	private String comunaEmpresa;
 
-    /**
-     * Constructor vacio
-     */
-    public Cliente() {
-    }
+	/**
+	 * Constructor vacio
+	 */
+	public Cliente() {
+	}
 
-    /**
-     * Constructor de la clase
-     * @param rut
-     * @param nombres
-     * @param apellidos
-     * @param telefono
-     * @param afp
-     * @param sistemaSalud
-     * @param direccion
-     * @param comuna
-     * @param edad
-     */
-    public Cliente(String rut, String nombres, String apellidos, String telefono, String afp, String sistemaSalud, String direccion, String comuna, int edad) {
-        this.rut = rut;
-        this.nombres = nombres;
-        this.apellidos = apellidos;
-        this.telefono = telefono;
-        this.afp = afp;
-        this.sistemaSalud = sistemaSalud;
-        this.direccion = direccion;
-        this.comuna = comuna;
-        this.edad = edad;
-    }
+	/**
+	 * Constructor de la clase
+	 * 
+	 * @param nombreEmpresa
+	 * @param giroEmpresa
+	 * @param telefonoRepresentante
+	 * @param direccionEmpresa
+	 * @param comunaEmpresa
+	 */
+	public Cliente(String nombreEmpresa, String giroEmpresa, String telefonoRepresentante, String direccionEmpresa,
+			String comunaEmpresa) {
+		this.nombreEmpresa = nombreEmpresa;
+		this.giroEmpresa = giroEmpresa;
+		this.telefonoRepresentante = telefonoRepresentante;
+		this.direccionEmpresa = direccionEmpresa;
+		this.comunaEmpresa = comunaEmpresa;
+	}
 
-    /**
-     * Constructor de la clase con parametros propio y herencia
-     * @param nombre
-     * @param fechaNacimiento
-     * @param run
-     * @param rut
-     * @param nombres
-     * @param apellidos
-     * @param telefono
-     * @param afp
-     * @param sistemaSalud
-     * @param direccion
-     * @param comuna
-     * @param edad
-     */
-    public Cliente(String nombre, LocalDate fechaNacimiento, String run, String rut, String nombres, String apellidos, String telefono, String afp, String sistemaSalud, String direccion, String comuna, int edad) {
-        super(nombre, fechaNacimiento, run);
-        this.rut = rut;
-        this.nombres = nombres;
-        this.apellidos = apellidos;
-        this.telefono = telefono;
-        this.afp = afp;
-        this.sistemaSalud = sistemaSalud;
-        this.direccion = direccion;
-        this.comuna = comuna;
-        this.edad = edad;
-    }
+	/**
+	 * Constructor de la clase propio y herencia
+	 * 
+	 * @param nombre
+	 * @param apellido1
+	 * @param apellido2
+	 * @param fechaNacimiento
+	 * @param run
+	 * @param nombreEmpresa
+	 * @param giroEmpresa
+	 * @param telefonoRepresentante
+	 * @param direccionEmpresa
+	 * @param comunaEmpresa
+	 */
+	public Cliente(String nombre, String apellido1, String apellido2, LocalDate fechaNacimiento, String run,
+			String nombreEmpresa, String giroEmpresa, String telefonoRepresentante, String direccionEmpresa,
+			String comunaEmpresa) {
+		super(nombre, apellido1, apellido2, fechaNacimiento, run);
+		this.nombreEmpresa = nombreEmpresa;
+		this.giroEmpresa = giroEmpresa;
+		this.telefonoRepresentante = telefonoRepresentante;
+		this.direccionEmpresa = direccionEmpresa;
+		this.comunaEmpresa = comunaEmpresa;
+	}
 
-    /**
-     * Metodo que retorna los parametros y valores de la clase
-     * @return mensaje con lo datos del cliente
-     */
-    @Override
-    public String toString() {
-        return "Cliente{" +
-                "rut='" + rut + '\'' +
-                ", nombres='" + nombres + '\'' +
-                ", apellidos='" + apellidos + '\'' +
-                ", telefono='" + telefono + '\'' +
-                ", afp='" + afp + '\'' +
-                ", sistemaSalud='" + sistemaSalud + '\'' +
-                ", direccion='" + direccion + '\'' +
-                ", comunal='" + comuna + '\'' +
-                ", edad=" + edad +
-                '}';
-    }
+	/**
+	 * Metodo que retorna los parametros y valores de la clase
+	 * 
+	 * @return mensaje con lo datos del cliente
+	 */
+	@Override
+	public String toString() {
+		return "Cliente [nombreEmpresa=" + nombreEmpresa + ", giroEmpresa=" + giroEmpresa + ", telefonoRepresentante="
+				+ telefonoRepresentante + ", direccionEmpresa=" + direccionEmpresa + ", comunaEmpresa=" + comunaEmpresa
+				+ "]";
+	}
 
-    //Getter and Setter
-    public String getRut() {
-        return rut;
-    }
+	public String getNombreEmpresa() {
+		return nombreEmpresa;
+	}
 
-    public void setRut(String rut) {
-        this.rut = rut;
-    }
+	public void setNombreEmpresa(String nombreEmpresa) {
+		this.nombreEmpresa = nombreEmpresa;
+	}
 
-    public String getNombres() {
-        return nombres;
-    }
+	public String getTelefonoRepresentante() {
+		return telefonoRepresentante;
+	}
 
-    public void setNombres(String nombres) {
-        this.nombres = nombres;
-    }
+	public void setTelefonoRepresentante(String telefonoRepresentante) {
+		this.telefonoRepresentante = telefonoRepresentante;
+	}
 
-    public String getApellidos() {
-        return apellidos;
-    }
+	public String getDireccionEmpresa() {
+		return direccionEmpresa;
+	}
 
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
-    }
+	public void setDireccionEmpresa(String direccionEmpresa) {
+		this.direccionEmpresa = direccionEmpresa;
+	}
 
-    public String getTelefono() {
-        return telefono;
-    }
+	public String getComunaEmpresa() {
+		return comunaEmpresa;
+	}
 
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
+	public void setComunaEmpresa(String comunaEmpresa) {
+		this.comunaEmpresa = comunaEmpresa;
+	}
 
-    public String getAfp() {
-        return afp;
-    }
+	/**
+	 * Metodo que retorna el nombre completo de la empresa
+	 * 
+	 * @return String que contiene el nombre de la empresa
+	 */
+	public String obtenerNombre() {
+		return nombreEmpresa;
+	}
 
-    public void setAfp(String afp) {
-        this.afp = afp;
-    }
+	/**
+	 * Metodo que complementado con la interfaz muestra por consola datos del
+	 * cliente
+	 */
+	@Override
+	public void analizarUsuario() {
+		System.out.println("Direccion" + direccionEmpresa + "\nComuna" + comunaEmpresa);
+	}
 
-    public String getSistemaSalud() {
-        return sistemaSalud;
-    }
+	public String getGiroEmpresa() {
+		return giroEmpresa;
+	}
 
-    public void setSistemaSalud(String sistemaSalud) {
-        this.sistemaSalud = sistemaSalud;
-    }
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-
-    public String getComuna() {
-        return comuna;
-    }
-
-    public void setComuna(String comuna) {
-        this.comuna = comuna;
-    }
-
-    public int getEdad() {
-        return edad;
-    }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
-
-    /**
-     * Metodo que retorna el nombre completo del cliente
-     * @return String que contiene los nombres y apellidos concatenados con un espacio
-     */
-    public String obtenerNombre(){
-        return nombres +" "+ apellidos;
-    }
-
-    /**
-     * Metodo que retorna el sistema de salud del cliente
-     * @return String que contiene (Fonasa o Isapre)
-     */
-    public String obtenerSistemaSalud(){
-        return sistemaSalud;
-    }
-
-    /**
-     * Metodo que complementado con la interfaz muestra por consola datos del usuario
-     */
-    @Override
-    public void analizarUsuario(){
-        System.out.println("Direccion"+ direccion + "\nComuna"+comuna);
-    }
+	public void setGiroEmpresa(String giroEmpresa) {
+		this.giroEmpresa = giroEmpresa;
+	}
 }
