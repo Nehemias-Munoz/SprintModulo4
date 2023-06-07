@@ -1,6 +1,7 @@
 import modelos.administrativo.Administrativo;
 import modelos.cliente.Cliente;
 import modelos.contenedor.Contenedor;
+import modelos.profesional.Profesional;
 
 import java.time.LocalDate;
 import java.util.Scanner;
@@ -50,6 +51,21 @@ public class App {
                 nuevoCliente.setNombre(scan.next());
                 break;
             case 2:
+                Profesional nuevoProfesional = new Profesional();
+                System.out.println("Ingrese el nombre del profesional");
+                nuevoProfesional.setNombre(scan.next());
+                System.out.println("Ingrese el primer apellido");
+                nuevoProfesional.setApellido1(scan.next());
+                System.out.println("Ingrese el segundo apellido");
+                nuevoProfesional.setApellido2(scan.next());
+                System.out.println("Ingrese la fecha de nacimiento del profesional \n Formato: año-mes-dia");
+                nuevoProfesional.setFechaNacimiento(LocalDate.parse(scan.next()));
+                System.out.println("Ingrese el run del profesional");
+                nuevoProfesional.setRun(scan.next());
+                System.out.println("Ingrese el titulo del profesional");
+                nuevoProfesional.setTitulo(scan.next());
+                System.out.println("Ingrese la fecha de ingreso del profesional \n Formato: año-mes-dia");
+                nuevoProfesional.setFechaIngreso(LocalDate.parse(scan.next()));
                 break;
             case 3:
                 Administrativo nuevoAdministrativo = new Administrativo();
