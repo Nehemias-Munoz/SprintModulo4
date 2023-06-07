@@ -1,9 +1,11 @@
 import modelos.administrativo.Administrativo;
+import modelos.capacitacion.Capacitacion;
 import modelos.cliente.Cliente;
 import modelos.contenedor.Contenedor;
 import modelos.profesional.Profesional;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Scanner;
 
 public class App {
@@ -113,6 +115,22 @@ public class App {
                 System.out.println("Administrativo añadido");
                 break;
             case 4:
+                Capacitacion nuevaCapacitacion = new Capacitacion();
+                nuevaCapacitacion.setIdentificador(1);
+                System.out.println("Ingrese rut de la empresa");
+                nuevaCapacitacion.setRut(scan.next());
+                System.out.println("Ingrese dia de la capacitacion \n Formato: (Lunes - Domingo) escrito en palabras");
+                nuevaCapacitacion.setDia(scan.next());
+                System.out.println("Ingrese hora de la capacitacion \n Formato: (00:00) hora:minuto");
+                nuevaCapacitacion.setHora(LocalTime.parse(scan.next()));
+                System.out.println("Ingrese lugar de la capacitacion");
+                nuevaCapacitacion.setLugar(scan.next());
+                System.out.println("Ingrese la duracion de la capacitacion \n Formato:(00:00) hora:minuto");
+                nuevaCapacitacion.setDuracion(LocalTime.parse(scan.next()));
+                System.out.println("Ingrese la cantidad de asistentes");
+                nuevaCapacitacion.setCantidadAsistentes(Integer.parseInt(scan.next()));
+                contenedor.almacenarCapacitacion(nuevaCapacitacion);
+                System.out.println("Capacitacion añadido");
                 break;
             case 5:
                 break;
