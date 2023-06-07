@@ -1,4 +1,5 @@
 import modelos.administrativo.Administrativo;
+import modelos.capacitacion.Capacitacion;
 import modelos.cliente.Cliente;
 import modelos.contenedor.Contenedor;
 import modelos.profesional.Profesional;
@@ -113,6 +114,11 @@ public class App {
                 System.out.println("Administrativo añadido");
                 break;
             case 4:
+                Capacitacion nuevaCapacitacion = new Capacitacion();
+                nuevaCapacitacion.setIdentificador(1);
+                System.out.println("Ingrese rut de la empresa");
+                nuevaCapacitacion.setRut(scan.next());
+                //todo: terminar de implementar la capacitacion
                 break;
             case 5:
                 break;
