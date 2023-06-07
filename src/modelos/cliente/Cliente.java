@@ -11,6 +11,7 @@ import modelos.usuario.Usuario;
 public class Cliente extends Usuario implements Asesoria {
 	private String nombreEmpresa;
 	private String giroEmpresa;
+	private String rutEmpresa;
 	private String telefonoRepresentante;
 	private String direccionEmpresa;
 	private String comunaEmpresa;
@@ -26,14 +27,16 @@ public class Cliente extends Usuario implements Asesoria {
 	 * 
 	 * @param nombreEmpresa
 	 * @param giroEmpresa
+	 * @param rutEmpresa
 	 * @param telefonoRepresentante
 	 * @param direccionEmpresa
 	 * @param comunaEmpresa
 	 */
-	public Cliente(String nombreEmpresa, String giroEmpresa, String telefonoRepresentante, String direccionEmpresa,
-			String comunaEmpresa) {
+	public Cliente(String nombreEmpresa, String giroEmpresa, String rutEmpresa, String telefonoRepresentante, String direccionEmpresa,
+				   String comunaEmpresa) {
 		this.nombreEmpresa = nombreEmpresa;
 		this.giroEmpresa = giroEmpresa;
+		this.rutEmpresa = rutEmpresa;
 		this.telefonoRepresentante = telefonoRepresentante;
 		this.direccionEmpresa = direccionEmpresa;
 		this.comunaEmpresa = comunaEmpresa;
@@ -49,16 +52,18 @@ public class Cliente extends Usuario implements Asesoria {
 	 * @param run
 	 * @param nombreEmpresa
 	 * @param giroEmpresa
+	 * @param rutEmpresa
 	 * @param telefonoRepresentante
 	 * @param direccionEmpresa
 	 * @param comunaEmpresa
 	 */
 	public Cliente(String nombre, String apellido1, String apellido2, LocalDate fechaNacimiento, String run,
-			String nombreEmpresa, String giroEmpresa, String telefonoRepresentante, String direccionEmpresa,
-			String comunaEmpresa) {
+				   String nombreEmpresa, String giroEmpresa, String rutEmpresa, String telefonoRepresentante, String direccionEmpresa,
+				   String comunaEmpresa) {
 		super(nombre, apellido1, apellido2, fechaNacimiento, run);
 		this.nombreEmpresa = nombreEmpresa;
 		this.giroEmpresa = giroEmpresa;
+		this.rutEmpresa = rutEmpresa;
 		this.telefonoRepresentante = telefonoRepresentante;
 		this.direccionEmpresa = direccionEmpresa;
 		this.comunaEmpresa = comunaEmpresa;
@@ -67,11 +72,11 @@ public class Cliente extends Usuario implements Asesoria {
 	/**
 	 * Metodo que retorna los parametros y valores de la clase
 	 * 
-	 * @return mensaje con lo datos del cliente
+	 * @return mensaje con los datos del cliente
 	 */
 	@Override
 	public String toString() {
-		return "Cliente [nombreEmpresa=" + nombreEmpresa + ", giroEmpresa=" + giroEmpresa + ", telefonoRepresentante="
+		return "Cliente [nombreEmpresa=" + nombreEmpresa + ", giroEmpresa=" + giroEmpresa +"rutEmpresa"+rutEmpresa +", telefonoRepresentante="
 				+ telefonoRepresentante + ", direccionEmpresa=" + direccionEmpresa + ", comunaEmpresa=" + comunaEmpresa
 				+ "]";
 	}
@@ -82,6 +87,21 @@ public class Cliente extends Usuario implements Asesoria {
 
 	public void setNombreEmpresa(String nombreEmpresa) {
 		this.nombreEmpresa = nombreEmpresa;
+	}
+	public String getGiroEmpresa() {
+		return giroEmpresa;
+	}
+
+	public void setGiroEmpresa(String giroEmpresa) {
+		this.giroEmpresa = giroEmpresa;
+	}
+
+	public String getRutEmpresa() {
+		return rutEmpresa;
+	}
+
+	public void setRutEmpresa(String rutEmpresa) {
+		this.rutEmpresa = rutEmpresa;
 	}
 
 	public String getTelefonoRepresentante() {
@@ -126,11 +146,5 @@ public class Cliente extends Usuario implements Asesoria {
 		System.out.println("Direccion" + direccionEmpresa + "\nComuna" + comunaEmpresa);
 	}
 
-	public String getGiroEmpresa() {
-		return giroEmpresa;
-	}
 
-	public void setGiroEmpresa(String giroEmpresa) {
-		this.giroEmpresa = giroEmpresa;
-	}
 }
