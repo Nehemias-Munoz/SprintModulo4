@@ -33,16 +33,19 @@ public class Profesional  extends Usuario implements Asesoria {
     /**
      * Constructor de la clase con parametros y herencia
      * @param nombre
+     * @param apellido1
+     * @param apellido2
      * @param fechaNacimiento
      * @param run
      * @param titulo
      * @param fechaIngreso
      */
-    public Profesional(String nombre, LocalDate fechaNacimiento, String run, String titulo, LocalDate fechaIngreso) {
-        super(nombre, fechaNacimiento, run);
+    public Profesional(String nombre, String apellido1, String apellido2, LocalDate fechaNacimiento, String run, String titulo, LocalDate fechaIngreso) {
+        super(nombre, apellido1, apellido2, fechaNacimiento, run);
         this.titulo = titulo;
         this.fechaIngreso = fechaIngreso;
     }
+
 
     /**
      * Metodo que retorna los parametros y valores de la clase
