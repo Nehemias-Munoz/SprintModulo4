@@ -1,5 +1,89 @@
+import modelos.administrativo.Administrativo;
+import modelos.cliente.Cliente;
+import modelos.contenedor.Contenedor;
+
+import java.time.LocalDate;
+import java.util.Scanner;
+
 public class App {
     public static void main(String[] args) {
+        Contenedor contenedor = new Contenedor();
+        int opcion = 0;
+        opcion = mostrarMenu();
+    }
 
+    public static int mostrarMenu(){
+        Scanner scan = new Scanner(System.in);
+        int opcion = 0;
+        final String MENU = """
+                1 - Almacenar cliente\s
+                2 - Almacenar profesional\s
+                3 - Almacenar administrativo\s
+                4 - Almacenar capacitación\s
+                5 - Eliminar usuario\s
+                6 - Listar usuarios\s
+                7 - Listar usuarios por tipo\s
+                8 - Listar capacitaciones\s
+                0 - Salir
+                """;
+
+        do {
+            System.out.println(MENU);
+            System.out.println("Ingrese el numero de la accion que desea realizar:");
+            try{
+                opcion = Integer.parseInt(scan.next());
+            }catch (NumberFormatException e){
+                System.out.println("Ingrese un caracter valido");
+                mostrarMenu();
+            }
+
+        }while (opcion != 0);
+        return opcion;
+    }
+
+    public static void ejecutarAccion(int opcion, Contenedor contenedor){
+        Scanner scan = new Scanner(System.in);
+        switch (opcion){
+            case 1:
+                Cliente nuevoCliente = new Cliente();
+                System.out.println("Ingrese el nombre del cliente");
+                nuevoCliente.setNombre(scan.next());
+                break;
+            case 2:
+                break;
+            case 3:
+                Administrativo nuevoAdministrativo = new Administrativo();
+                System.out.println("Ingrese el nombre del administrativo");
+                nuevoAdministrativo.setNombre(scan.next());
+                System.out.println("Ingrese el primer apellido");
+                nuevoAdministrativo.setApellido1(scan.next());
+                System.out.println("Ingrese el segundo apellido");
+                nuevoAdministrativo.setApellido2(scan.next());
+                System.out.println("Ingrese la fecha de nacimiento del administrador \n Formato: año-mes-dia");
+                nuevoAdministrativo.setFechaNacimiento(LocalDate.parse(scan.next()));
+                System.out.println("Ingrese el run del administador");
+                nuevoAdministrativo.setRun(scan.next());
+                System.out.println("Ingrese el area del administador");
+                nuevoAdministrativo.setArea(scan.next());
+                contenedor.almacenarAdministrativo(nuevoAdministrativo);
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+            case 6:
+                break;
+            case 7:
+//                contenedor.listarUsuarios
+                break;
+            case 8:
+                    //contenedor.listarCapacitaciones();
+                break;
+            case 0:
+                System.out.println("El programa ha finalizado");
+                break;
+            default:
+                System.out.println("No existe esa opcion");
+        }
     }
 }
