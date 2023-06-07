@@ -131,10 +131,10 @@ public class Cliente extends Usuario implements Asesoria {
 	/**
 	 * Metodo que retorna el nombre completo de la empresa
 	 * 
-	 * @return String que contiene el nombre de la empresa
+	 * @return String que contiene el nombre del cliente
 	 */
 	public String obtenerNombre() {
-		return nombreEmpresa;
+		return this.getNombre()+" "+getApellido1()+" "+getApellido2();
 	}
 
 	/**
