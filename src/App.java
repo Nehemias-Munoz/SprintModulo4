@@ -75,13 +75,13 @@ public class App {
                 nuevoAdministrativo.setApellido1(scan.next());
                 System.out.println("Ingrese el segundo apellido");
                 nuevoAdministrativo.setApellido2(scan.next());
-                System.out.println("Ingrese la fecha de nacimiento del administrador \n Formato: año-mes-dia");
+                System.out.println("Ingrese la fecha de nacimiento del administrativo \n Formato: año-mes-dia");
                 nuevoAdministrativo.setFechaNacimiento(LocalDate.parse(scan.next()));
-                System.out.println("Ingrese el run del administador");
+                System.out.println("Ingrese el run del administrativo");
                 nuevoAdministrativo.setRun(scan.next());
-                System.out.println("Ingrese el area del administador");
+                System.out.println("Ingrese el area del administrativo");
                 nuevoAdministrativo.setArea(scan.next());
-                System.out.println("Ingrese la experiencia del administador");
+                System.out.println("Ingrese la experiencia del administrativo");
                 nuevoAdministrativo.setExperiencia(scan.next());
                 contenedor.almacenarAdministrativo(nuevoAdministrativo);
                 System.out.println("Administrativo añadido");
