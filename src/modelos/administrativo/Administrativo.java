@@ -59,6 +59,22 @@ public class Administrativo extends Usuario implements Asesoria {
 		return "Administrativo{" + "area='" + area + '\'' + ", experiencia='" + experiencia + '\'' + '}';
 	}
 
+	public String getArea() {
+		return area;
+	}
+
+	public void setArea(String area) {
+		this.area = area;
+	}
+
+	public String getExperiencia() {
+		return experiencia;
+	}
+
+	public void setExperiencia(String experiencia) {
+		this.experiencia = experiencia;
+	}
+
 	/**
 	 * Metodo que complementado con la interfaz muestra por consola datos del
 	 * usuario Administrativo
