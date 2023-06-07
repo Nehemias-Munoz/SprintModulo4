@@ -65,7 +65,10 @@ public class App {
                 nuevoAdministrativo.setRun(scan.next());
                 System.out.println("Ingrese el area del administador");
                 nuevoAdministrativo.setArea(scan.next());
+                System.out.println("Ingrese la experiencia del administador");
+                nuevoAdministrativo.setExperiencia(scan.next());
                 contenedor.almacenarAdministrativo(nuevoAdministrativo);
+                System.out.println("Administrativo añadido");
                 break;
             case 4:
                 break;
