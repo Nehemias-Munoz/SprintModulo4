@@ -42,7 +42,7 @@ public class Accidente {
     /**
      * Metodo que retorna los parametros y valores de la clase
      *
-     * @return mensaje con los datos del cliente
+     * @return mensaje con los datos de la clase accidente
      */
     @Override
     public String toString() {
