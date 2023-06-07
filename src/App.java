@@ -90,6 +90,8 @@ public class App {
                 nuevoProfesional.setTitulo(scan.next());
                 System.out.println("Ingrese la fecha de ingreso del profesional \n Formato: año-mes-dia");
                 nuevoProfesional.setFechaIngreso(LocalDate.parse(scan.next()));
+                contenedor.almacenarProfesional(nuevoProfesional);
+                System.out.println("Profesional añadido");
                 break;
             case 3:
                 Administrativo nuevoAdministrativo = new Administrativo();
