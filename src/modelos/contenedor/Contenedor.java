@@ -1,6 +1,6 @@
 package modelos.contenedor;
 
-import interfaces.asesoria.Asesoria;
+import interfaces.asesoria.IAsesoria;
 import modelos.administrativo.Administrativo;
 import modelos.capacitacion.Capacitacion;
 import modelos.cliente.Cliente;
@@ -11,9 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Contenedor {
-    private List<Asesoria> tiposUsuarios = new ArrayList<>();
+    private List<IAsesoria> listaUsuariosIAsesoria = new ArrayList<>();
     private List<Capacitacion> capacitaciones = new ArrayList<>();
-
+    private List<Usuario> listaUsuarios = new ArrayList<>();
     /**
      * Constructor Vacio
      */
@@ -22,11 +22,11 @@ public class Contenedor {
 
     /**
      * Constructor de la clase con parametros
-     * @param tiposUsuarios
+     * @param listaUsuariosIAsesoria
      * @param capacitaciones
      */
-    public Contenedor(List<Asesoria> tiposUsuarios, List<Capacitacion> capacitaciones) {
-        this.tiposUsuarios = tiposUsuarios;
+    public Contenedor(List<IAsesoria> listaUsuariosIAsesoria, List<Capacitacion> capacitaciones) {
+        this.listaUsuariosIAsesoria = listaUsuariosIAsesoria;
         this.capacitaciones = capacitaciones;
     }
 
@@ -37,7 +37,7 @@ public class Contenedor {
     @Override
     public String toString() {
         return "Contenedor{" +
-                "tiposUsuarios=" + tiposUsuarios +
+                "tiposUsuarios=" + listaUsuariosIAsesoria +
                 ", capacitaciones=" + capacitaciones +
                 '}';
     }
@@ -47,29 +47,35 @@ public class Contenedor {
 
     /**
      * Metodo que permite agregar un nuevo cliente a la lista de instancias
-     * dela interface Asesoria.
+     * de la interface IAsesoria.
      * @param cliente
      */
     public void almacenarCliente(Cliente cliente){
-        tiposUsuarios.add(cliente);
+        listaUsuariosIAsesoria.add(cliente);
     }
+
+//    public void agregarUsuario(IAsesoria  a){
+//        tiposUsuarios.add(a);
+//    }
 
     /**
      * Metodo que permite agregar un nuevo profesional a la lista de
-     * instancias de la interface Asesoria.
+     * instancias de la interface IAsesoria.
      * @param profesional
      */
     public void almacenarProfesional(Profesional profesional){
-        tiposUsuarios.add(profesional);
+        listaUsuariosIAsesoria.add(profesional);
+        listaUsuarios.add(profesional);
     }
 
     /**
      * Metodo que permite agregar un nuevo administrativo a la lista de
-     * instancias de la interface Asesoria.
+     * instancias de la interface IAsesoria.
      * @param administrativo
      */
     public void almacenarAdministrativo(Administrativo administrativo){
-        tiposUsuarios.add(administrativo);
+        listaUsuariosIAsesoria.add(administrativo);
+        listaUsuarios.add(administrativo);
     }
 
     /**
@@ -82,52 +88,67 @@ public class Contenedor {
     }
 
     public void eliminarUsuario(String run){
-        if (tiposUsuarios == null){
+        if (listaUsuariosIAsesoria.isEmpty()){
             System.out.println("No existen registros en la tabla");
         }else{
-            for (Asesoria item: tiposUsuarios) {
-                Usuario user = (Usuario) item;
-                if (user.getRun().equals(run)){
-                    tiposUsuarios.remove(item);
+            for (int i = 0; i < listaUsuarios.size(); i++) {
+                if( listaUsuarios.get(i).getRun().equals(run)){
+                    listaUsuariosIAsesoria.remove(i);
+                    listaUsuarios.remove(i);
                 }
-                System.out.println("Usuario rut: "+run+" eliminado");
+            }
+            System.out.println("Usuario rut: "+run+" eliminado");
+        }
+    }
+
+    /**
+     * Metodo que permite desplegar la lista completa de usuarios, independiente
+     * del tipo. En este método solo se deben desplegar los datos de la clase usuario.
+     */
+    public void listarUsuario(){
+        if (listaUsuariosIAsesoria.isEmpty()){
+            System.out.println("Actualmente no existen registros en la lista usuarios");
+        }else{
+            for (IAsesoria tiposUsuario : listaUsuariosIAsesoria) {
+                tiposUsuario.listarDatos();
             }
         }
     }
 
     /**
-     * Metodo que muestra por consola los datos de todos los usuarios almacenados en la lista
-     * tipo usuarios
+     * Recibe un tipo de usuario (cliente, administrador o
+     * profesional), y retorna los datos respectivos según el tipo de usuario.
+     * @param tipoUsuario
      */
-    public void listarUsuario(){
-        if (tiposUsuarios == null){
-            System.out.println("No existe registros en la tabla");
-        }else{
-            for (Asesoria tiposUsuario : tiposUsuarios) {
-                Usuario user = (Usuario) tiposUsuario;
-                System.out.println(user.toString());
-            }
-        }
-    }
-
     public void listarUsuarioPorTipo(String tipoUsuario){
-        if (tiposUsuarios == null) {
-            System.out.println("No existe registros en la tabla");
+        if (listaUsuariosIAsesoria.isEmpty()) {
+            System.out.println("Actualmente no existen registros en la lista usuarios");
         }else{
-            for (Asesoria user : tiposUsuarios){
-                System.out.println(user.getClass());
-            }
-        }
-    }
-    public void listarCapacitaciones(){
-        if(capacitaciones == null){
-            System.out.println("Actualmente no existen capacitaciones almacenadas");
-        }else{
-            for (Capacitacion capacitacion: capacitaciones) {
-                System.out.println(capacitacion.toString());
-                //todo: mostrar datos cliente
+            for (int i = 0; i < listaUsuarios.size(); i++) {
+                if(tipoUsuario.equals(listaUsuarios.get(i).getClass().getSimpleName())){
+                    listaUsuarios.get(i).listarDatos();
+                }
             }
         }
     }
 
+    /**
+     * Método despliega las capacitaciones registradas en la
+     * lista respectiva, junto con los datos del cliente al que está asociada dicha
+     * capacitación.
+     */
+    public void listarCapacitaciones(){
+        if(capacitaciones.isEmpty()){
+            System.out.println("Actualmente no existen capacitaciones almacenadas \n");
+        }else{
+            for (Capacitacion cap: capacitaciones) {
+                System.out.println(cap);
+                for (Usuario user: listaUsuarios) {
+                    if (user.getRun().equals(cap.getRut())){
+                        user.listarDatos();
+                    }
+                }
+            }
+        }
+    }
 }
