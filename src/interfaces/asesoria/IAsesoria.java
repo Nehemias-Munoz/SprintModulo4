@@ -1,6 +1,6 @@
 package interfaces.asesoria;
 
-public interface Asesoria {
+public interface IAsesoria {
     public void analizarUsuario();
 
     public void listarDatos();
