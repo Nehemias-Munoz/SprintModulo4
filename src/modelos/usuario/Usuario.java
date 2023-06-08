@@ -1,11 +1,11 @@
 package modelos.usuario;
 
-import interfaces.asesoria.Asesoria;
+import interfaces.asesoria.IAsesoria;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class Usuario implements Asesoria {
+public class Usuario implements IAsesoria {
     private String nombre;
     private String apellido1;
     private String apellido2;
@@ -20,7 +20,7 @@ public class Usuario implements Asesoria {
 
     /**
      * Constructor de la clase
-     * 
+     *
      * @param nombre
      * @param apellido1
      * @param apellido2
@@ -96,7 +96,7 @@ public class Usuario implements Asesoria {
 
     /**
      * Metodo que calcula la edad del usuario
-     * 
+     *
      * @return mensaje con la edad en años de usuarios
      */
     public String mostrarEdad() {
@@ -105,7 +105,7 @@ public class Usuario implements Asesoria {
     }
 
     /**
-     * Metodo implementado de Asesoria que muestra por consola el nombre y rut del
+     * Metodo implementado de IAsesoria que muestra por consola el nombre y rut del
      * usuario
      */
     @Override
@@ -114,4 +114,12 @@ public class Usuario implements Asesoria {
         System.out.println(mensaje);
     }
 
+    @Override
+    public void listarDatos() {
+        System.out.println("Datos \nnombre=" + nombre  +
+                ", apellido1=" + apellido1 +
+                ", apellido2=" + apellido2 +
+                ", fechaNacimiento=" + fechaNacimiento +
+                ", run=" + run);
+    }
 }
