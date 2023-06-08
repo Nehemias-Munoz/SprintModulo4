@@ -20,16 +20,16 @@ public class Administrativo extends Usuario implements Asesoria {
 	public Administrativo() {
 	}
 
-	/**
-	 * Constructor de la clase
-	 * 
-	 * @param area
-	 * @param experiencia
-	 */
-	public Administrativo(String area, String experiencia) {
-		this.area = area;
-		this.experiencia = experiencia;
-	}
+//	/**
+//	 * Constructor de la clase
+//	 *
+//	 * @param area
+//	 * @param experiencia
+//	 */
+//	public Administrativo(String area, String experiencia) {
+//		this.area = area;
+//		this.experiencia = experiencia;
+//	}
 
 	/**
 	 * Constructor con parametros y herencia

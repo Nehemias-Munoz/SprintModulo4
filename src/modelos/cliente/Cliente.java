@@ -22,25 +22,25 @@ public class Cliente extends Usuario implements Asesoria {
 	public Cliente() {
 	}
 
-	/**
-	 * Constructor de la clase
-	 * 
-	 * @param nombreEmpresa
-	 * @param giroEmpresa
-	 * @param rutEmpresa
-	 * @param telefonoRepresentante
-	 * @param direccionEmpresa
-	 * @param comunaEmpresa
-	 */
-	public Cliente(String nombreEmpresa, String giroEmpresa, String rutEmpresa, String telefonoRepresentante, String direccionEmpresa,
-				   String comunaEmpresa) {
-		this.nombreEmpresa = nombreEmpresa;
-		this.giroEmpresa = giroEmpresa;
-		this.rutEmpresa = rutEmpresa;
-		this.telefonoRepresentante = telefonoRepresentante;
-		this.direccionEmpresa = direccionEmpresa;
-		this.comunaEmpresa = comunaEmpresa;
-	}
+//	/**
+//	 * Constructor de la clase
+//	 *
+//	 * @param nombreEmpresa
+//	 * @param giroEmpresa
+//	 * @param rutEmpresa
+//	 * @param telefonoRepresentante
+//	 * @param direccionEmpresa
+//	 * @param comunaEmpresa
+//	 */
+//	public Cliente(String nombreEmpresa, String giroEmpresa, String rutEmpresa, String telefonoRepresentante, String direccionEmpresa,
+//				   String comunaEmpresa) {
+//		this.nombreEmpresa = nombreEmpresa;
+//		this.giroEmpresa = giroEmpresa;
+//		this.rutEmpresa = rutEmpresa;
+//		this.telefonoRepresentante = telefonoRepresentante;
+//		this.direccionEmpresa = direccionEmpresa;
+//		this.comunaEmpresa = comunaEmpresa;
+//	}
 
 	/**
 	 * Constructor de la clase propio y herencia

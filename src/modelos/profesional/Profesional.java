@@ -19,16 +19,16 @@ public class Profesional  extends Usuario implements Asesoria {
     public Profesional() {
     }
 
-    /**
-     * Constructor de la clase con parametros
-     * 
-     * @param titulo
-     * @param fechaIngreso
-     */
-    public Profesional(String titulo, LocalDate fechaIngreso) {
-        this.titulo = titulo;
-        this.fechaIngreso = fechaIngreso;
-    }
+//    /**
+//     * Constructor de la clase con parametros
+//     *
+//     * @param titulo
+//     * @param fechaIngreso
+//     */
+//    public Profesional(String titulo, LocalDate fechaIngreso) {
+//        this.titulo = titulo;
+//        this.fechaIngreso = fechaIngreso;
+//    }
 
     /**
      * Constructor de la clase con parametros y herencia
