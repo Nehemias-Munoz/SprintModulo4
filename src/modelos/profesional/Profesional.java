@@ -1,6 +1,6 @@
 package modelos.profesional;
 
-import interfaces.asesoria.Asesoria;
+import interfaces.asesoria.IAsesoria;
 import modelos.usuario.Usuario;
 
 import java.time.LocalDate;
@@ -9,7 +9,7 @@ import java.time.format.DateTimeFormatter;
 /**
  * @author nehemiasmunoz
  */
-public class Profesional  extends Usuario implements Asesoria {
+public class Profesional  extends Usuario implements IAsesoria {
     private String titulo;
     private LocalDate fechaIngreso;
 
@@ -54,7 +54,7 @@ public class Profesional  extends Usuario implements Asesoria {
      */
     @Override
     public String toString() {
-        return "Profesional{" +
+        return super.toString()+ "Profesional{" +
                 "titulo='" + titulo + '\'' +
                 ", fechaIngreso=" + fechaIngreso +
                 '}';
@@ -84,5 +84,11 @@ public class Profesional  extends Usuario implements Asesoria {
     @Override
     public void analizarUsuario() {
         System.out.println("Titulo: " + titulo + "\nFecha Ingreso: " + getFechaIngreso());
+    }
+
+    @Override
+    public void listarDatos() {
+        super.listarDatos();
+        System.out.println("Tipo profesional \n titulo=" + titulo +", fechaIngreso=" + fechaIngreso);
     }
 }

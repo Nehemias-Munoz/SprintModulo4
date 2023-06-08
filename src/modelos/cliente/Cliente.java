@@ -2,13 +2,13 @@ package modelos.cliente;
 
 import java.time.LocalDate;
 
-import interfaces.asesoria.Asesoria;
+import interfaces.asesoria.IAsesoria;
 import modelos.usuario.Usuario;
 
 /**
  * @author nehemiasmunoz
  */
-public class Cliente extends Usuario implements Asesoria {
+public class Cliente extends Usuario implements IAsesoria {
 	private String nombreEmpresa;
 	private String giroEmpresa;
 	private String rutEmpresa;
@@ -146,5 +146,9 @@ public class Cliente extends Usuario implements Asesoria {
 		System.out.println("Direccion" + direccionEmpresa + "\nComuna" + comunaEmpresa);
 	}
 
-
+	@Override
+	public void listarDatos() {
+		super.listarDatos();
+		System.out.println("Tipo cliente \n nombreEmpresa=" + nombreEmpresa + ", giroEmpresa=" + giroEmpresa +"rutEmpresa="+rutEmpresa +", telefonoRepresentante=" + telefonoRepresentante + ", direccionEmpresa=" + direccionEmpresa + ", comunaEmpresa=" + comunaEmpresa);
+	}
 }

@@ -2,7 +2,7 @@ package modelos.administrativo;
 
 import java.time.LocalDate;
 
-import interfaces.asesoria.Asesoria;
+import interfaces.asesoria.IAsesoria;
 import modelos.usuario.Usuario;
 
 /**
@@ -10,7 +10,7 @@ import modelos.usuario.Usuario;
  * @author nehemiasmunoz
  *
  */
-public class Administrativo extends Usuario implements Asesoria {
+public class Administrativo extends Usuario implements IAsesoria {
 	private String area;
 	private String experiencia;
 
@@ -82,5 +82,11 @@ public class Administrativo extends Usuario implements Asesoria {
 	@Override
 	public void analizarUsuario() {
 		System.out.println("Area: " + area + "\nExperiencia: " + experiencia);
+	}
+
+	@Override
+	public void listarDatos() {
+		super.listarDatos();
+		System.out.println("Tipo administrativo \n area='" + area + ", experiencia='" + experiencia );
 	}
 }
