@@ -65,8 +65,6 @@ public class App {
                 nuevoCliente.setGiroEmpresa(scan.next());
                 System.out.println("Ingrese el rut de la empresa");
                 nuevoCliente.setRutEmpresa(scan.next());
-                System.out.println("Ingrese el giro de la empresa");
-                nuevoCliente.setGiroEmpresa(scan.next());
                 System.out.println("Ingrese el telefono del representante de la empresa");
                 nuevoCliente.setTelefonoRepresentante(scan.next());
                 System.out.println("Ingrese la direccion de la empresa");
