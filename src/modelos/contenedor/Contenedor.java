@@ -1,14 +1,18 @@
 package modelos.contenedor;
 
 import interfaces.asesoria.Asesoria;
+import modelos.administrativo.Administrativo;
 import modelos.capacitacion.Capacitacion;
+import modelos.cliente.Cliente;
+import modelos.profesional.Profesional;
 import modelos.usuario.Usuario;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Contenedor {
-    private List<Asesoria> tiposUsuarios;
-    private List<Capacitacion> capacitaciones;
+    private List<Asesoria> tiposUsuarios = new ArrayList<>();
+    private List<Capacitacion> capacitaciones = new ArrayList<>();
 
     /**
      * Constructor Vacio
@@ -46,7 +50,7 @@ public class Contenedor {
      * dela interface Asesoria.
      * @param cliente
      */
-    public void almacenarCliente(Asesoria cliente){
+    public void almacenarCliente(Cliente cliente){
         tiposUsuarios.add(cliente);
     }
 
@@ -55,7 +59,7 @@ public class Contenedor {
      * instancias de la interface Asesoria.
      * @param profesional
      */
-    public void almacenarProfesional(Asesoria profesional){
+    public void almacenarProfesional(Profesional profesional){
         tiposUsuarios.add(profesional);
     }
 
@@ -64,7 +68,7 @@ public class Contenedor {
      * instancias de la interface Asesoria.
      * @param administrativo
      */
-    public void almacenarAdministrativo(Asesoria administrativo){
+    public void almacenarAdministrativo(Administrativo administrativo){
         tiposUsuarios.add(administrativo);
     }
 
@@ -77,16 +81,52 @@ public class Contenedor {
         capacitaciones.add(capacitacion);
     }
 
-    public void eliminarUsuario(String rut){
-
-        for ( Asesoria user: tiposUsuarios) {
-            user.
+    public void eliminarUsuario(String run){
+        if (tiposUsuarios == null){
+            System.out.println("No existen registros en la tabla");
+        }else{
+            for (Asesoria item: tiposUsuarios) {
+                Usuario user = (Usuario) item;
+                if (user.getRun().equals(run)){
+                    tiposUsuarios.remove(item);
+                }
+                System.out.println("Usuario rut: "+run+" eliminado");
+            }
         }
     }
 
+    /**
+     * Metodo que muestra por consola los datos de todos los usuarios almacenados en la lista
+     * tipo usuarios
+     */
     public void listarUsuario(){
-        for (int i = 0; i < tiposUsuarios.size(); i++) {
-            System.out.println(tiposUsuarios.get(i).);
+        if (tiposUsuarios == null){
+            System.out.println("No existe registros en la tabla");
+        }else{
+            for (Asesoria tiposUsuario : tiposUsuarios) {
+                Usuario user = (Usuario) tiposUsuario;
+                System.out.println(user.toString());
+            }
+        }
+    }
+
+    public void listarUsuarioPorTipo(String tipoUsuario){
+        if (tiposUsuarios == null) {
+            System.out.println("No existe registros en la tabla");
+        }else{
+            for (Asesoria user : tiposUsuarios){
+                System.out.println(user.getClass());
+            }
+        }
+    }
+    public void listarCapacitaciones(){
+        if(capacitaciones == null){
+            System.out.println("Actualmente no existen capacitaciones almacenadas");
+        }else{
+            for (Capacitacion capacitacion: capacitaciones) {
+                System.out.println(capacitacion.toString());
+                //todo: mostrar datos cliente
+            }
         }
     }
 

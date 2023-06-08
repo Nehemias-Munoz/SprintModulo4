@@ -11,13 +11,11 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         Contenedor contenedor = new Contenedor();
-        int opcion = 0;
-        opcion = mostrarMenu();
+        ejecutarAccion(mostrarMenu(),contenedor);
     }
 
     public static int mostrarMenu(){
         Scanner scan = new Scanner(System.in);
-        int opcion = 0;
         final String MENU = """
                 1 - Almacenar cliente\s
                 2 - Almacenar profesional\s
@@ -29,18 +27,18 @@ public class App {
                 8 - Listar capacitaciones\s
                 0 - Salir
                 """;
-
+        int opcion = 0;
         do {
             System.out.println(MENU);
             System.out.println("Ingrese el numero de la accion que desea realizar:");
             try{
-                opcion = Integer.parseInt(scan.next());
+                opcion = Integer.parseInt(scan.nextLine());
             }catch (NumberFormatException e){
                 System.out.println("Ingrese un caracter valido");
                 mostrarMenu();
             }
 
-        }while (opcion != 0);
+        }while (opcion != 0 && !(opcion <= 8 && opcion >= 1));
         return opcion;
     }
 
@@ -131,14 +129,17 @@ public class App {
                 System.out.println("Capacitacion añadido");
                 break;
             case 5:
+                System.out.println("Ingrese run de usuario a eliminar:");
+                contenedor.eliminarUsuario(scan.next());
                 break;
             case 6:
+                contenedor.listarUsuario();
                 break;
             case 7:
 //                contenedor.listarUsuarios
                 break;
             case 8:
-                    //contenedor.listarCapacitaciones();
+                    contenedor.listarCapacitaciones();
                 break;
             case 0:
                 System.out.println("El programa ha finalizado");
@@ -146,5 +147,6 @@ public class App {
             default:
                 System.out.println("No existe esa opcion");
         }
+        mostrarMenu();
     }
 }
