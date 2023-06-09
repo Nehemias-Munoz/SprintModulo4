@@ -48,8 +48,8 @@ public class Accidente {
     public String toString() {
         return "Accidente{" +
                 "id=" + id +
-                ", dia=" + dia +
-                ", hora=" + hora +
+                ", dia=" + getDia() +
+                ", hora=" + getHora() +
                 ", lugar='" + lugar + '\'' +
                 ", origen='" + origen + '\'' +
                 ", consecuencia='" + consecuencia + '\'' +

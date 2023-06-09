@@ -49,8 +49,8 @@ public class Capacitacion {
         return "Capacitacion{" +
                 "identificador=" + identificador +
                 ", rut='" + rut + '\'' +
-                ", dia='" + dia + '\'' +
-                ", hora=" + hora +
+                ", dia='" + getDia() + '\'' +
+                ", hora=" + getHora() +
                 ", lugar='" + lugar + '\'' +
                 ", duracion=" + duracion +
                 ", cantidadAsistentes=" + cantidadAsistentes +

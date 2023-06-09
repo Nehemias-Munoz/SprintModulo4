@@ -56,7 +56,7 @@ public class Profesional  extends Usuario implements IAsesoria {
     public String toString() {
         return super.toString()+ "Profesional{" +
                 "titulo='" + titulo + '\'' +
-                ", fechaIngreso=" + fechaIngreso +
+                ", fechaIngreso=" + getFechaIngreso() +
                 '}';
     }
 
@@ -89,6 +89,6 @@ public class Profesional  extends Usuario implements IAsesoria {
     @Override
     public void listarDatos() {
         super.listarDatos();
-        System.out.println("Tipo profesional \n titulo=" + titulo +", fechaIngreso=" + fechaIngreso);
+        System.out.println("Tipo profesional \n titulo=" + titulo +", fechaIngreso=" + getFechaIngreso());
     }
 }
