@@ -41,7 +41,7 @@ final public class Validacion {
     public static String validarDiaSemana(String param){
         String[] dias = {"lunes", "martes","miercoles","jueves","viernes","sabado","domingo"};
         List listaDias = Arrays.stream(dias).toList();
-        while (!listaDias.contains(param)){
+        while (!listaDias.contains(param.toLowerCase())){
             System.out.println("El dia ingresado no existe, ingreselo nuevamente");
             param = scan.nextLine();
             validarDiaSemana(param);
