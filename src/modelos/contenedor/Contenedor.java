@@ -52,6 +52,7 @@ public class Contenedor {
      */
     public void almacenarCliente(Cliente cliente){
         listaUsuariosIAsesoria.add(cliente);
+        listaUsuarios.add(cliente);
     }
 
 //    public void agregarUsuario(IAsesoria  a){
@@ -87,6 +88,11 @@ public class Contenedor {
         capacitaciones.add(capacitacion);
     }
 
+    /**
+     * Permite eliminar un usuario desde la lista de interfaces de
+     * Asesoría acuerdo con el RUN del usuario.
+     * @param run
+     */
     public void eliminarUsuario(String run){
         if (listaUsuariosIAsesoria.isEmpty()){
             System.out.println("No existen registros en la tabla");
