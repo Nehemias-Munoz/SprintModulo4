@@ -115,7 +115,8 @@ public class App {
             }
             case 4 -> {
                 Capacitacion nuevaCapacitacion = new Capacitacion();
-                nuevaCapacitacion.setIdentificador(1);
+                System.out.println("Ingrese el numero de identificacion de la capacitacion");
+                nuevaCapacitacion.setIdentificador(Validacion.validarCantidad(scan.nextLine(),"numero identificacion",999999999,0));
                 System.out.println("Ingrese rut de la empresa");
                 nuevaCapacitacion.setRut(Validacion.validarLargoRut(scan.nextLine()));
                 System.out.println("Ingrese dia de la capacitacion \n Formato: (Lunes - Domingo) escrito en palabras");
