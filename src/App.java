@@ -120,7 +120,7 @@ public class App {
                 System.out.println("Ingrese rut de la empresa");
                 nuevaCapacitacion.setRut(Validacion.validarLargoRut(scan.nextLine()));
                 System.out.println("Ingrese dia de la capacitacion \n Formato: (Lunes - Domingo) escrito en palabras");
-                nuevaCapacitacion.setDia(scan.nextLine());
+                nuevaCapacitacion.setDia(Validacion.validarDiaSemana(scan.nextLine()));
                 System.out.println("Ingrese hora de la capacitacion \n Formato: (00:00) hora:minuto");
                 nuevaCapacitacion.setHora(LocalTime.parse(scan.nextLine()));
                 System.out.println("Ingrese lugar de la capacitacion");

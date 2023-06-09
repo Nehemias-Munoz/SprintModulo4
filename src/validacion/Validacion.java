@@ -1,8 +1,6 @@
 package validacion;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Scanner;
+import java.util.*;
 
 final public class Validacion {
     static Scanner scan = new Scanner(System.in);
@@ -23,7 +21,7 @@ final public class Validacion {
         } else if (param.toLowerCase().contains("k")) {
             param.replace("k", "0");
         }
-        while (Integer.parseInt(param) > 99999999 || param.isBlank()){
+        while ( param.isBlank() || param.length() > 8|| Integer.parseInt(param) > 99999999){
             System.out.println("El rut debe ser menor a 99.999.999, ingreselo nuevamente");
             param = scan.nextLine();
             validarLargoRut(param);
@@ -40,11 +38,14 @@ final public class Validacion {
         }
         return paramTemp;
     }
-//    public static String validarDiaSemana(String param){
-//        String[] dias = {"lunes", "martes","miercoles","jueves","viernes","sabado","domingo"};
-//        while (Collections. dias.contains(param.toLowerCase())){
-//
-//        }
-//        return param;
-//    }
+    public static String validarDiaSemana(String param){
+        String[] dias = {"lunes", "martes","miercoles","jueves","viernes","sabado","domingo"};
+        List listaDias = Arrays.stream(dias).toList();
+        while (!listaDias.contains(param)){
+            System.out.println("El dia ingresado no existe, ingreselo nuevamente");
+            param = scan.nextLine();
+            validarDiaSemana(param);
+        }
+        return param;
+    }
 }
